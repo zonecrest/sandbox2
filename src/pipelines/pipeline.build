@@ -1,8 +1,5 @@
 pipeline {
     agent any
-       tools {
-            maven 'maven_3_5_3'
-        }
     stages {
         stage('Checkout Stage') {
             steps {
@@ -12,7 +9,10 @@ pipeline {
         }
         stage('Build Stage') {
             steps {
-                maven clean compile
+            withMaven(maven: 'maven_3_5_3') {
+                
+            }
+
             }
         }
         stage('Test Stage') {
