@@ -1,7 +1,7 @@
 pipeline {
     agent any
        tools {
-            mvn 'maven_3_5_3'
+            maven 'maven_3_5_3'
         }
     stages {
         stage('Checkout Stage') {
@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Build Stage') {
             steps {
-                mvn clean compile
+                maven clean compile
             }
         }
         stage('Test Stage') {
