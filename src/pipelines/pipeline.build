@@ -10,7 +10,7 @@ pipeline {
         stage('Build Stage') {
             steps {
             withMaven(maven: 'maven_3_5_3') {
-                mvn clean compile
+                clean compile
             }
 
             }
