@@ -9,9 +9,9 @@ pipeline {
         }
         stage('Build Stage') {
             steps {
-                sh 'make'
-
-                echo 'Build'
+                withMaven(maven :  'maven_3_5_3'){
+                    sh 'maven clean compile'
+                }
             }
         }
         stage('Test Stage') {
