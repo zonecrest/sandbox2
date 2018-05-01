@@ -1,27 +1,27 @@
 pipeline {
     agent any
     stages {
-        stage('Stage 1') {
+        stage('Checkout Stage') {
             steps {
                 checkout scm
                 echo 'Check out'
             }
         }
-        stage('Stage 2') {
+        stage('Build Stage') {
             steps {
                 sh 'make'
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+
                 echo 'Build'
             }
         }
-        stage('Stage 3') {
+        stage('Test Stage') {
             steps {
-                echo 'Test'
+                echo 'Test NOT YET IMPLEMENTED'
             }
         }
-        stage('Stage 4') {
+        stage('Deploy Stage') {
             steps {
-                echo 'Deploy'
+                echo 'Deploy NOT YET IMPLEMENTED'
             }
         }
     }
